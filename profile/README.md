@@ -12,19 +12,17 @@ We believe that good documentation is the backbone of every great software proje
 ## ✨ Key Features
 DocuBook is designed with a variety of features to simplify your documentation workflow:
 
-Free Forever: All features are available for free, with no hidden costs or premium tiers.
+- **Free Forever:** All features are available for free, with no hidden costs or premium tiers.
 
-Open-Source: Built transparently by the community. You can contribute to make DocuBook even better.
+- **Open-Source:** Built transparently by the community. You can contribute to make DocuBook even better.
 
-Modern Alternative: A user experience on par with popular documentation platforms like Mintlify and Gitbook.
+- **Modern Alternative:** A user experience on par with popular documentation platforms like Mintlify and Gitbook.
 
-Markdown-Based: Write your documentation in the familiar and beloved Markdown format.
+- **Markdown-Based:** Write your documentation in the familiar and beloved Markdown format.
 
-Zero-Config: Start your new project in seconds with a single, simple command.
+- **Zero-Config:** Start your new project in seconds with a single, simple command.
 
-Beautiful Design: Automatically generate a clean, responsive, and easy-to-navigate documentation site.
-
-Interactive Playground: Try DocuBook directly in your browser through our Playground.
+- **Beautiful Design:** Automatically generate a clean, responsive, and easy-to-navigate documentation site.
 
 ## 🚀 Getting Started
 Creating a new documentation site with DocuBook is incredibly easy. Just run the following command in your terminal:
