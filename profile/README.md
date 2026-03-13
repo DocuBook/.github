@@ -5,7 +5,7 @@ Welcome to the official DocuBook organization! Our mission is to make the docume
 ## 👋 About DocuBook
 DocuBook is a modern, open-source documentation site generator. We serve as an alternative for developers and teams looking for a powerful yet simple documentation solution, similar to Mintlify, Gitbook, or Docusaurus. With DocuBook, you can transform your Markdown files into a beautiful and professional documentation site without complex configurations.
 
-Our motto: Smooth sailing when making docs.
+Our motto: An open-source alternative to Mintlify or GitBook. Just write in MDX — it works with pretty much any React framework.
 
 We believe that good documentation is the backbone of every great software project. Therefore, we built DocuBook to be free forever with no feature limitations, enabling everyone to create high-quality documentation.
 
