@@ -28,7 +28,7 @@ DocuBook is designed with a variety of features to simplify your documentation w
 Creating a new documentation site with DocuBook is incredibly easy. Just run the following command in your terminal:
 
 ```bash
-npx @docubook/create
+npx @docubook/cli@latest
 ```
 
 This command will guide you through the process of setting up your new documentation project. In an instant, you'll have a local documentation site ready to be customized and filled with your content.
