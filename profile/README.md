@@ -33,4 +33,4 @@ npx @docubook/cli@latest
 
 This command will guide you through the process of setting up your new documentation project. In an instant, you'll have a local documentation site ready to be customized and filled with your content.
 
-![command output](https://github.com/DocuBook/docubook/blob/main/cli-docubook.png)
+![command output](https://github.com/DocuBook/docubook/blob/main/docubook-cli.png)
