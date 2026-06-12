@@ -33,4 +33,30 @@ npx @docubook/cli@latest
 
 This command will guide you through the process of setting up your new documentation project. In an instant, you'll have a local documentation site ready to be customized and filled with your content.
 
-![command output](https://github.com/DocuBook/docubook/blob/main/docubook-cli.png)
+```bash
+┌────────────────────────────────────────────────────────────────────────────┐
+│ ▛▀▀▜                                                                       │
+│ ▌>_▐  DocuBook CLI v0.6.1                                                  │
+│ ▙▄▄▟  Initialize, build, and deploy docs from terminal.                    │
+│                                                                            │
+│      Visit our documentation. https://www.docubook.pro/                    │
+└────────────────────────────────────────────────────────────────────────────┘
+
+? What is your project named? › test-docs
+✔ What is your project named? … test-docs
+
+? Select your template: › - Use arrow-keys. Return to submit.
+❯ nextjs-vercel
+   Next.js and Vercel deployment (optimized for vercel)
+  nextjs-docker
+  react-router (Coming Soon)
+✔ Select your template: › nextjs-vercel
+
+? Would you like to install dependencies now? › (Y/n)
+✔ Would you like to install dependencies now? … no
+
+ℹ Creating a new DocuBook project in /path/test-docs...
+
+Creating Project
+Initializing...
+```
