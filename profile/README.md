@@ -1,62 +1,100 @@
-# Welcome to DocuBook
+<p align="center">
+  <img
+    src="apps/web/public/images/docu.svg"
+    alt="DocuBook Logo"
+    width="100"
+    height="100"
+  />
+</p>
+<h1 align="center" style="font-size: 32px;">
+  DocuBook
+</h1>
+<h3 align="center" style="font-size: 20px;">
+  An open-source alternative to Mintlify or GitBook. Write documentation in MDX with the runtime and UI library you already use. Built on Bun + React today, with Node, Deno, and Vue support on the roadmap.
+</h3>
 
-Welcome to the official DocuBook organization! Our mission is to make the documentation process a smooth and enjoyable experience.
+[![DocuBook CLI](https://shieldcn.dev/npm/v/@docubook/cli?label=CLI&variant=secondary)](https://www.npmjs.com/package/@docubook/cli)
+[![DocuBook Core](https://shieldcn.dev/npm/v/@docubook/core?label=Core&variant=secondary)](https://www.npmjs.com/package/@docubook/core)
+[![MDX Content](https://shieldcn.dev/npm/v/@docubook/mdx-content?label=MDX%20Content&variant=secondary)](https://www.npmjs.com/package/@docubook/mdx-content)
+[![Flame](https://shieldcn.dev/npm/v/@docubook/flame?label=Flame&variant=secondary)](https://www.npmjs.com/package/@docubook/flame)
+[![UI React](https://shieldcn.dev/npm/v/@docubook/ui-react?label=UI%20React&variant=secondary)](https://www.npmjs.com/package/@docubook/ui-react)
+[![License](https://shieldcn.dev/github/license/DocuBook/docubook.svg?variant=secondary)](https://github.com/DocuBook/docubook)
 
-## 👋 About DocuBook
-DocuBook is a modern, open-source documentation site generator. We serve as an alternative for developers and teams looking for a powerful yet simple documentation solution, similar to Mintlify, Gitbook, or Docusaurus. With DocuBook, you can transform your Markdown files into a beautiful and professional documentation site without complex configurations.
+## Architecture
 
-Our motto: An open-source alternative to Mintlify or GitBook. Just write in MDX — it works with pretty much any React framework.
+DocuBook is a **layer between MDX content and the browser**. The core pipeline compiles MDX into renderable output, and the runtime layer determines how that output is served — Node, Bun, or Deno. You bring the content; DocuBook handles everything in between.
 
-We believe that good documentation is the backbone of every great software project. Therefore, we built DocuBook to be free forever with no feature limitations, enabling everyone to create high-quality documentation.
+```mermaid
+flowchart TD
+    A[MDX Content]
+    B["@docubook/core — compile pipeline, rehype/remark plugins"]
+    C["@docubook/mdx-content — portable UI components (framework-agnostic)"]
+    D["@docubook/flame"]
+    D1["Bun + React - ready to use"]
+    D2["Node — in development"]
+    D3["Deno — in development"]
+    E[Browser]
 
-## ✨ Key Features
-DocuBook is designed with a variety of features to simplify your documentation workflow:
-
-- **Free Forever:** All features are available for free, with no hidden costs or premium tiers.
-
-- **Open-Source:** Built transparently by the community. You can contribute to make DocuBook even better.
-
-- **Modern Alternative:** A user experience on par with popular documentation platforms like Mintlify and Gitbook.
-
-- **Markdown-Based:** Write your documentation in the familiar and beloved Markdown format.
-
-- **Zero-Config:** Start your new project in seconds with a single, simple command.
-
-- **Beautiful Design:** Automatically generate a clean, responsive, and easy-to-navigate documentation site.
-
-## 🚀 Getting Started
-Creating a new documentation site with DocuBook is incredibly easy. Just run the following command in your terminal:
-
-```bash
-npx @docubook/cli@latest
+    A -->  B --> C --> D
+    D --> D1 --> E
+    D --> D2 --> E
+    D --> D3 --> E
 ```
 
-This command will guide you through the process of setting up your new documentation project. In an instant, you'll have a local documentation site ready to be customized and filled with your content.
+## Packages
+
+|                                     Package                                      |                                                                    Description                                                                    |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **[@docubook/core](https://www.npmjs.com/package/@docubook/core)**               | Shared MDX compile pipeline, rehype/remark plugins, and markdown utilities.                                                                       |
+| **[@docubook/mdx-content](https://www.npmjs.com/package/@docubook/mdx-content)** | Portable MDX components (Mermaid, CodeBlock, Tabs, etc.) with framework-agnostic adapters.                                                        |
+| **[@docubook/flame](https://www.npmjs.com/package/@docubook/flame)**             | The runtime layer — a React + MDX framework that bridges compiled content to the browser. Supports Bun today; Node and Deno runtimes coming soon. |
+| **[@docubook/cli](https://www.npmjs.com/package/@docubook/cli)**                 | CLI tool to initialize, update, and deploy documentation from your terminal.                                                                      |
+
+## Runtimes
+
+DocuBook is designed to be runtime-agnostic. The same MDX content runs on any supported runtime — swap the runtime layer without touching your content.
+
+| Runtime  | UI Library |      Status      |          Recipe           |
+| -------- | ---------- | ---------------- | ------------------------- |
+| **Bun**  | React      | ✅ Available      | `bun add @docubook/flame` |
+| **Node** | React      | 🚧 In development | —                         |
+| **Deno** | React      | 🚧 In development | —                         |
+| **Bun**  | Vue        | 🔮 Planned        | —                         |
+| **Node** | Vue        | 🔮 Planned        | —                         |
+| **Deno** | Vue        | 🔮 Planned        | —                         |
+
+## Installation
+
+### Bun + React (available now)
 
 ```bash
-┌────────────────────────────────────────────────────────────────────────────┐
-│ ▛▀▀▜                                                                       │
-│ ▌>_▐  DocuBook CLI v0.6.1                                                  │
-│ ▙▄▄▟  Initialize, build, and deploy docs from terminal.                    │
-│                                                                            │
-│      Visit our documentation. https://www.docubook.pro/                    │
-└────────────────────────────────────────────────────────────────────────────┘
-
-? What is your project named? › test-docs
-✔ What is your project named? … test-docs
-
-? Select your template: › - Use arrow-keys. Return to submit.
-❯ nextjs-vercel
-   Next.js and Vercel deployment (optimized for vercel)
-  nextjs-docker
-  react-router (Coming Soon)
-✔ Select your template: › nextjs-vercel
-
-? Would you like to install dependencies now? › (Y/n)
-✔ Would you like to install dependencies now? … no
-
-ℹ Creating a new DocuBook project in /path/test-docs...
-
-Creating Project
-Initializing...
+mkdir my-docs && cd my-docs
+bun add @docubook/flame
+bunx flame init
+bun run dev
 ```
+
+> [!WARNING]
+> The `nextjs-vercel`, `nextjs-docker`, and `react-router` templates are **deprecated** and will no longer be maintained. Use `@docubook/flame` as the recommended starting point going forward.
+
+## Contributing
+
+<!-- prettier-ignore -->
+> [!NOTE]
+> We are very open to all your contributions, no matter how small your contribution is, it will certainly be part of the development of this project.
+> 
+> Please read: [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Workspace
+
+<!-- prettier-ignore -->
+> [!IMPORTANT]
+> This repository uses a monorepo setup powered by pnpm workspaces and Turborepo to manage apps and packages in a single workspace.
+>
+> For development workflow:
+> - Vitest provides fast unit testing with native ESM and TypeScript support
+> - Changesets handles package versioning and release management
+> - Husky runs automatic linting and formatting before commits
+> - commitlint ensures commit messages follow the Conventional Commits format consistently
+>
+> This setup helps keep the codebase organized, maintainable, and contributor-friendly.
