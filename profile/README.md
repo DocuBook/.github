@@ -1,5 +1,3 @@
-https://www.docubook.pro/docs/assets/images/docu.svg"
-
 <p align="center">
   <img
     src="https://www.docubook.pro/docs/assets/images/docu.svg"
