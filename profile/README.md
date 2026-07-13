@@ -1,3 +1,5 @@
+https://www.docubook.pro/docs/assets/images/docu.svg"
+
 <p align="center">
   <img
     src="https://www.docubook.pro/docs/assets/images/docu.svg"
@@ -10,7 +12,7 @@
   DocuBook
 </h1>
 <h3 align="center" style="font-size: 20px;">
-  An open-source alternative to Mintlify or GitBook. Write documentation in MDX with your favourite UI library. The toolchain runs on Bun, Node.js, or Deno — output is flat static HTML, no server required.
+  An open-source alternative to Mintlify or GitBook. Write documentation in MDX with React. The toolchain runs on Bun, Node.js, or Deno — output is flat static HTML, no server required.
 </h3>
 
 [![Flame](https://shieldcn.dev/npm/v/@docubook/flame?label=Flame&variant=secondary)](https://www.npmjs.com/package/@docubook/flame)
@@ -48,7 +50,7 @@ flowchart TD
 | **[@docubook/mdx-content](https://www.npmjs.com/package/@docubook/mdx-content)** | Portable MDX components (Mermaid, CodeBlock, Tabs, etc.) with framework-agnostic adapters.                                                        |
 | **[@docubook/flame](https://www.npmjs.com/package/@docubook/flame)**             | The runtime layer — a React + MDX framework that bridges compiled content to the browser. Runs on Bun, Node.js, and Deno.                         |
 | **[@docubook/runt](https://www.npmjs.com/package/@docubook/runt)**               | Runtime HTTP server adapters (Bun, Node.js, Deno) behind a single `RuntimeAdapter` interface.                                                     |
-| **[@docubook/cli](https://www.npmjs.com/package/@docubook/cli)**                 | CLI tool to initialize, update, and deploy documentation from your terminal.                                                                      |
+| **[@docubook/mdx-remote](https://www.npmjs.com/package/@docubook/mdx-remote)**   | Runtime MDX compilation and rendering — a rewrite of next-mdx-remote for DocuBook.                                                                |
 
 ## Runtimes
 
@@ -59,9 +61,6 @@ The runtime is only needed for the build toolchain and local dev server. The out
 | **Bun**  | React      | ✅ Available      | `bun add @docubook/flame`                    |
 | **Node** | React      | ✅ Available      | `npm install @docubook/flame`                |
 | **Deno** | React      | ✅ Available      | `deno run -A npm:@docubook/flame init`       |
-| **Bun**  | Vue        | 🔮 Planned        | —                                            |
-| **Node** | Vue        | 🔮 Planned        | —                                            |
-| **Deno** | Vue        | 🔮 Planned        | —                                            |
 
 ## Prerequisites
 
@@ -126,9 +125,6 @@ deno run -A npm:@docubook/flame init
 deno task dev
 ```
 
-> [!WARNING]
-> The `nextjs-vercel`, `nextjs-docker`, and `react-router` templates are **deprecated** and will no longer be maintained. Use `@docubook/flame` as the recommended starting point going forward.
-
 ## Contributing
 
 <!-- prettier-ignore -->
@@ -150,3 +146,4 @@ deno task dev
 > - commitlint ensures commit messages follow the Conventional Commits format consistently
 >
 > This setup helps keep the codebase organized, maintainable, and contributor-friendly.
+
